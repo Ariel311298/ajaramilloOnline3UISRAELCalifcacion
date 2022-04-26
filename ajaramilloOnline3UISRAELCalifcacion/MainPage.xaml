@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ajaramilloOnline3UISRAELCalifcacion.MainPage">
+
+    <StackLayout>
+        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+            <Label Text="Simulación del sistema de calificaciones de la UISRAEL - Login" HorizontalTextAlignment="Center" 
+                TextColor="White" FontSize="36"/>
+        </Frame>
+
+        <Image Source="uisrael.png"/>
+
+        <Label Text="Usuario:" TextColor="Black" FontSize="15">
+        </Label>
+        <Entry x:Name="txtUsuario" Placeholder="Ingrese el usuario"/>
+        <Label Text="Contraseña:" TextColor="Black" FontSize="15">
+        </Label>
+        <Entry x:Name="txtPass" Placeholder="Ingrese la contraseña" IsPassword="True"/>
+        <Button x:Name="btnLogin" Text="Iniciar sesion" Clicked="btnLogin_Clicked"/>
+    </StackLayout>
+
+</ContentPage>

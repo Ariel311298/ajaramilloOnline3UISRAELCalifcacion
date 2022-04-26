@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ajaramilloOnline3UISRAELCalifcacion.ControlCalificacion">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Spacing="15">
+                <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+                    <Label Text="Simulación del sistema de calificaciones de la UISRAEL" HorizontalTextAlignment="Center" 
+                TextColor="White" FontSize="36"/>
+                </Frame>
+
+                <Label Text="Nombre del usuario:" TextColor="Black" FontSize="15">
+                </Label>
+                
+                <Label x:Name="lblNombre" TextColor="Blue" FontSize="12"
+                 />
+                
+                <Label Text="PARCIAL 1" TextColor="Black" FontSize="15">
+                </Label>
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="65"/>
+                        <RowDefinition Height="65"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Row="0" Grid.Column="0" Text="Nota Seguimiento 1:" HorizontalTextAlignment="Center"/>
+                    <Label Grid.Row="1" Grid.Column="0" Text="Examen 1:" HorizontalTextAlignment="Center"/>
+                    <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Text="Nota Parcial 1:" HorizontalTextAlignment="Center"/>
+                    <Entry x:Name="txtNotaSeg1" Placeholder="Ingrese la nota de seguimiento del parcial 1" Keyboard="Numeric" Grid.Row="0" 
+                    Grid.Column="1" TextChanged="txtNotaSeg1_TextChanged" MaxLength="5"/>
+                    <Entry x:Name="txtNotaExam1" MaxLength="5" Placeholder="Ingrese la nota del examen del parcial 1" Keyboard="Numeric" Grid.Row="1" 
+                    Grid.Column="1" TextChanged="txtNotaExam1_TextChanged"/>
+                    <Entry x:Name="txtNotaCalcSeg1" MaxLength="5" Text="0.00" IsReadOnly="True" Grid.Row="0" Grid.Column="2"/>
+                    <Entry x:Name="txtNotaCalcExam1" MaxLength="5" Text="0.00" IsReadOnly="True" Grid.Row="1" Grid.Column="2"/>
+                    <Entry x:Name="txtNotaParcial1" MaxLength="5" IsReadOnly="True" Grid.Row="2" Grid.Column="2" 
+                    Text="0.00" TextChanged="txtNotaParcial1_TextChanged"/>
+                    <Button x:Name="btnDefectoNotaSeg1" Text="Limpiar Datos" Grid.Row="0" Grid.Column="3" Clicked="btnDefectoNotaSeg1_Clicked"/>
+                    <Button x:Name="btnDefectoNotaExam1" Text="Limpiar Datos" Grid.Row="1" Grid.Column="3" Clicked="btnDefectoNotaExam1_Clicked"/>
+                </Grid>
+
+                <Button x:Name="btnCalcularParcial1" Text="Calcular Nota del Parcial 1" Clicked="btnCalcularParcial1_Clicked"/>
+
+                <Label Text="PARCIAL 2" TextColor="Black" FontSize="15">
+                </Label>
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="65"/>
+                        <RowDefinition Height="65"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Row="0" Grid.Column="0" Text="Nota Seguimiento 2:" HorizontalTextAlignment="Center"/>
+                    <Label Grid.Row="1" Grid.Column="0" Text="Examen 2:" HorizontalTextAlignment="Center"/>
+                    <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Text="Nota Parcial 2:" HorizontalTextAlignment="Center"/>
+                    <Entry x:Name="txtNotaSeg2" MaxLength="5" Placeholder="Ingrese la nota de seguimiento del parcial 2" Keyboard="Numeric" Grid.Row="0" 
+                    Grid.Column="1" TextChanged="txtNotaSeg2_TextChanged"/>
+                    <Entry x:Name="txtNotaExam2" MaxLength="5" Placeholder="Ingrese la nota del examen del parcial 2" Keyboard="Numeric" Grid.Row="1"
+                    Grid.Column="1" TextChanged="txtNotaExam2_TextChanged"/>
+                    <Entry x:Name="txtNotaCalcSeg2" MaxLength="5" Text="0.00" IsReadOnly="True" Grid.Row="0" Grid.Column="2"/>
+                    <Entry x:Name="txtNotaCalcExam2" MaxLength="5" Text="0.00" IsReadOnly="True" Grid.Row="1" Grid.Column="2"/>
+                    <Entry x:Name="txtNotaParcial2" MaxLength="5" IsReadOnly="True" Grid.Row="2" Grid.Column="2" Text="0.00" 
+                    TextChanged="txtNotaParcial2_TextChanged"/>
+                    <Button x:Name="btnDefectoNotaSeg2" Text="Limpiar Datos" Grid.Row="0" Grid.Column="3" Clicked="btnDefectoNotaSeg2_Clicked"/>
+                    <Button x:Name="btnDefectoNotaExam2" Text="Limpiar Datos" Grid.Row="1" Grid.Column="3" Clicked="btnDefectoNotaExam2_Clicked"/>
+                </Grid>
+
+                <Button x:Name="btnCalcularParcial2" Text="Calcular Nota del Parcial 2" Clicked="btnCalcularParcial2_Clicked"/>
+
+                <Label Text="NOTA FINAL" TextColor="Black" FontSize="15">
+                </Label>
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Row="0" Grid.Column="0" Text="Nota Final:" HorizontalTextAlignment="Center"/>
+                    <Entry x:Name="txtNotaFinal" MaxLength="5" IsReadOnly="True" Text="0.00" Grid.Row="0" Grid.Column="1" 
+                TextChanged="txtNotaFinal_TextChanged"/>
+                    <Label Grid.Row="1" Grid.Column="0" Text="Estado:" HorizontalTextAlignment="Center"/>
+                    <Label x:Name="lblEstado" Grid.Row="1" Grid.Column="1" Text="REPROBADO"/>
+                </Grid>
+
+                <Button x:Name="btnLimpiar" Text="Limpiar Campos" Clicked="btnLimpiar_Clicked"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
